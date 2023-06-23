@@ -1,0 +1,42 @@
+<div class="admin-container">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
+      <div class="container">
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item" [routerLinkActive]="['active']">
+              <a [routerLink]="['/admin/header1']" class="nav-link">Home Page Details</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']">
+              <a [routerLink]="['/admin/expertise']" class="nav-link">Expertise</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']">
+              <a [routerLink]="['/admin/products']" class="nav-link">Products</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav brand">
+            <!-- <img src="../assets/imgs/ad.jpeg" alt="" class="brand-img"> -->
+            <li class="brand-txt">
+              <h5 class="brand-title">John Doe</h5>
+              <div class="brand-subtitle">Web Designer | Developer</div>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="#" (click)="logout()" class="nav-link">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/admin/profile" class="nav-link">Profile</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+    <main class="page-content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+  

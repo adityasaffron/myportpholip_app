@@ -1,0 +1,73 @@
+<div class="form-container" *ngIf="!loader" >
+
+<form [formGroup]="welcomeForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="image">Image</label>
+      <input type="file" id="image" formControlName="image" (change)="onUpload($event)" accept="image/*">
+      <div *ngIf="welcomeForm.controls.image.invalid && welcomeForm.controls.image.touched" class="text-danger">
+        Image is required.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="heading">Heading</label>
+      <input type="text" id="heading" formControlName="heading" class="form-control">
+      <div *ngIf="welcomeForm.controls.heading.invalid && welcomeForm.controls.heading.touched" class="text-danger">
+        Heading is required.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" id="description" formControlName="description" class="form-control">
+      <div *ngIf="welcomeForm.controls.description.invalid && welcomeForm.controls.description.touched" class="text-danger">
+        Description is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label for="designation">Designation</label>
+        <input type="text" id="designation" formControlName="designation" class="form-control">
+        <div *ngIf="welcomeForm.controls.designation.invalid && welcomeForm.controls.designation.touched" class="text-danger">
+          Designation is required.
+        </div>
+      </div>
+  
+    <button type="submit" class="btn btn-primary" [disabled]="welcomeForm.invalid">Submit</button>
+  </form>
+
+
+
+  <table class="table table-bordered table-inverse">
+    <thead class="thead-inverse">
+        <tr>
+            <th>S.N.</th>
+            <th>Image</th>
+            <th>Heading</th>
+            <th>Description</th>
+            <th>Designation</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of Home;let j=index" >
+                <td scope="row">{{j+1}}</td>
+                <td>
+
+                    <img src="http://{{i?.image}}" alt="" srcset="" height="100"  width="100">
+
+                </td>
+                <td>{{i?.heading}}</td>
+                <td>{{i?.description}}</td>
+                <td>{{i?.designation}}</td>
+            </tr>
+        </tbody>
+  </table>
+
+
+</div>
+
+
+<div class="loader-container" *ngIf="loader"  >
+    <div class="loader"></div>
+  </div>
+  

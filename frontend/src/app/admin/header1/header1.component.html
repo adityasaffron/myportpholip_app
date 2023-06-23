@@ -1,0 +1,176 @@
+<div class="form-container" *ngIf="!loader" >
+  <form [formGroup]="welcomeForm" (ngSubmit)="onSubmit()" class="my-form">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="welcomeText">Welcome Text:</label>
+          <input type="text" id="welcomeText" formControlName="welcomeText" class="form-control">
+          <div *ngIf="welcomeForm.get('welcomeText')?.invalid && welcomeForm.get('welcomeText')?.touched" class="error-message">
+            Welcome Text is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" formControlName="name" class="form-control">
+          <div *ngIf="welcomeForm.get('name')?.invalid && welcomeForm.get('name')?.touched" class="error-message">
+            Name is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="designation">Designation:</label>
+          <input type="text" id="designation" formControlName="designation" class="form-control">
+          <div *ngIf="welcomeForm.get('designation')?.invalid && welcomeForm.get('designation')?.touched" class="error-message">
+            Designation is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="headerImage">Header Image:</label>
+          <input type="file" id="headerImage" class="form-control" (change)="onUpload($event)">
+          <div *ngIf="welcomeForm.get('headerImage')?.invalid && welcomeForm.get('headerImage')?.touched" class="error-message">
+            This image is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="WhoAmIheading">Who Am I Heading:</label>
+          <input type="text" id="WhoAmIheading" formControlName="WhoAmIheading" class="form-control">
+          <div *ngIf="welcomeForm.get('WhoAmIheading')?.invalid && welcomeForm.get('WhoAmIheading')?.touched" class="error-message">
+            Who Am I Heading is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="WhoAmIDescription">Who Am I Description:</label>
+          <input type="text" id="WhoAmIDescription" formControlName="WhoAmIDescription" class="form-control">
+          <div *ngIf="welcomeForm.get('WhoAmIDescription')?.invalid && welcomeForm.get('WhoAmIDescription')?.touched" class="error-message">
+            Who Am I Description is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" formControlName="dob" class="form-control">
+          <div *ngIf="welcomeForm.get('dob')?.invalid && welcomeForm.get('dob')?.touched" class="error-message">
+            Date of Birth is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" formControlName="email" class="form-control">
+          <div *ngIf="welcomeForm.get('email')?.invalid && welcomeForm.get('email')?.touched" class="error-message">
+            Email is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="phone">Phone:</label>
+          <input type="text" id="phone" formControlName="phone" class="form-control">
+          <div *ngIf="welcomeForm.get('phone')?.invalid && welcomeForm.get('phone')?.touched" class="error-message">
+            Phone is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="skype">Skype:</label>
+          <input type="text" id="skype" formControlName="skype" class="form-control">
+          <div *ngIf="welcomeForm.get('skype')?.invalid && welcomeForm.get('skype')?.touched" class="error-message">
+            Skype is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <input type="text" id="address" formControlName="address" class="form-control">
+          <div *ngIf="welcomeForm.get('address')?.invalid && welcomeForm.get('address')?.touched" class="error-message">
+            Address is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="facebookLink">Facebook Link:</label>
+          <input type="text" id="facebookLink" formControlName="facebookLink" class="form-control">
+          <div *ngIf="welcomeForm.get('facebookLink')?.invalid && welcomeForm.get('facebookLink')?.touched" class="error-message">
+            Facebook Link is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="twitterLink">Twitter Link:</label>
+          <input type="text" id="twitterLink" formControlName="twitterLink" class="form-control">
+          <div *ngIf="welcomeForm.get('twitterLink')?.invalid && welcomeForm.get('twitterLink')?.touched" class="error-message">
+            Twitter Link is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="googleLink">Google Link:</label>
+          <input type="text" id="googleLink" formControlName="googleLink" class="form-control">
+          <div *ngIf="welcomeForm.get('googleLink')?.invalid && welcomeForm.get('googleLink')?.touched" class="error-message">
+            Google Link is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="instagramLink">Instagram Link:</label>
+          <input type="text" id="instagramLink" formControlName="instagramLink" class="form-control">
+          <div *ngIf="welcomeForm.get('instagramLink')?.invalid && welcomeForm.get('instagramLink')?.touched" class="error-message">
+            Instagram Link is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="discordLink">Discord Link:</label>
+          <input type="text" id="discordLink" formControlName="discordLink" class="form-control">
+          <div *ngIf="welcomeForm.get('discordLink')?.invalid && welcomeForm.get('discordLink')?.touched" class="error-message">
+            Discord Link is required.
+          </div>
+        </div>
+      </div>
+
+
+      
+    
+
+    </div>
+
+    <button type="submit" [disabled]="welcomeForm.invalid" class="submit-button">Submit</button>
+  </form>
+</div>
+
+<div class="loader-container" *ngIf="loader"  >
+  <div class="loader"></div>
+</div>
